@@ -81,6 +81,123 @@
             //Console.WriteLine(E01); // { Id = 1, Name = Ahmed, Salary = 1200.0 }
             //// compiler will override on Tostring
             #endregion
+
+            #region Extension Methods
+            // use it through object of type (int,long or any type based on the fun return type)
+            //int Number = 12345;
+            //var result = Number.Reverse();
+            //Console.WriteLine(result);
+
+            //long Lnumber = 12345;
+            //var Lresult = Lnumber.Reverse();
+            //Console.WriteLine(Lresult);
+            #endregion
+
+            #region LINQ
+            // LINQ: Language Integrated Query
+            //     : 40+ Extension Methods (LINQ operators) Against Any Data [Data in Sequence]
+            //     : Regardless Data Store
+            //     : 13 Category
+            //     : LINQ Operators Exists in Built-in Class "Enumerable"
+
+
+            // Sequence : Object From Class Implement Interface "IEnumerable"
+            // Local Sequence : L2O,L2XML
+            // Remote Sequence: L2EF
+
+            // Input Sequence -> LINQ Operator -> OutPut Sequence
+            // Input Sequence -> LINQ Operator -> One Value
+            //                -> LINQ Operator -> OutPut Sequence
+
+            // Input Sequence -> LINQ Operator -> OutPut Sequence
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Enumerable.Where(Numbers, N => N % 2 == 0);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+
+            // Input Sequence -> LINQ Operator -> One Value
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Enumerable.Any(Numbers, N => N % 2 == 0);
+            //Console.WriteLine(Result);
+
+            //                -> LINQ Operator -> OutPut Sequence
+            //var Result = Enumerable.Range(1,100);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+            #endregion
+
+            #region LINQ Syntax
+            // 1- Fluent Syntax
+            // use LINQ Methods
+
+            // 1.1 LINQ Operator as=> Class Member Method Through Class "Enumerable"
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Enumerable.Where(Numbers, N => N % 2 == 0);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+
+            // 1.2. LINQ Operator as => Extension Method Through Sequence [Recommended]
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Numbers.Where(N => N % 2 == 0);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+
+            // 2. Query Syntax [Query Expression] Like SQL Style
+            // Start with From
+            // End Select or group By
+            // Query Syntax easier than Fluent (join, into,Group By,Into)
+
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = from X in Numbers
+            //             where X % 2 == 0
+            //             select X;
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+            #endregion
+
+            #region LINQ Execution Ways
+            // LINQ Execution Ways 
+            // 1. Differed Execution Way : 10 Category 
+            // 2. Immediate Execution Way: 3 Category [Elements Operator, Casting Operators, Aggregate Operators]
+
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Numbers.Where(N => N % 2 == 0); // Differed
+            //Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+            //foreach (var item in Result) // here
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var Result = Numbers.Where(N => N % 2 == 0).ToList(); // Immediate
+            //Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+            //foreach (var item in Result) 
+            //{
+            //    Console.WriteLine($"{item}");
+            //}
+
+            #endregion
+
+            #region Setup Data
+            //Console.WriteLine(ProductList[0]);
+            //Console.WriteLine(CustomerList[0]);
+            ////var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0);
+            //var Result = ListGenerator.CustomerList.Where(C => C.City == "Cairo");
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
         }
     }
 }
